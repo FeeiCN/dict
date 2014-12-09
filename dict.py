@@ -7,7 +7,7 @@ import urllib2
 
 """
 dict - Chinese/English Translation
-@author 止介(wufeifei@wufeifei.com)
+@author Feei(wufeifei@wufeifei.com)
 @date   2013.11.25
 """
 
