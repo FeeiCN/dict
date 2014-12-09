@@ -33,8 +33,14 @@ class Dict:
     def parse(self):
         code = self.content['errorCode']
         if code == 0:  # Success
+            try:
+                u = self.content['basic']['us-phonetic']
+                e = self.content['basic']['uk-phonetic']
+            except KeyError:
+                u = 'None'
+                e = 'None'
             print '\033[1;31m################################### \033[0m'
-            print '\033[1;31m# \033[0m', self.content['query'], self.content['translation'][0], '(U:', self.content['basic']['us-phonetic'], 'E:', self.content['basic']['uk-phonetic'], ')'
+            print '\033[1;31m# \033[0m', self.content['query'], self.content['translation'][0], '(U:', u, 'E:', e, ')'
             for i in range(0, len(self.content['basic']['explains'])):
                 print '\033[1;31m# \033[0m', self.content['basic']['explains'][i]
             print '\033[1;31m################################### \033[0m'
