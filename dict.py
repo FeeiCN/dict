@@ -8,7 +8,7 @@ import urllib2
 """
 dict - Chinese/English Translation
 @author Feei(wufeifei@wufeifei.com)
-@date   2013.11.25
+@date   2013.12.09
 """
 
 
