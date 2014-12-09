@@ -36,13 +36,18 @@ class Dict:
             try:
                 u = self.content['basic']['us-phonetic']
                 e = self.content['basic']['uk-phonetic']
+                explains = self.content['basic']['explains']
             except KeyError:
                 u = 'None'
                 e = 'None'
+                explains = 'None'
             print '\033[1;31m################################### \033[0m'
             print '\033[1;31m# \033[0m', self.content['query'], self.content['translation'][0], '(U:', u, 'E:', e, ')'
-            for i in range(0, len(self.content['basic']['explains'])):
-                print '\033[1;31m# \033[0m', self.content['basic']['explains'][i]
+            if explains != 'None':
+                for i in range(0, len(explains)):
+                    print '\033[1;31m# \033[0m', explains[i]
+            else:
+                print '\033[1;31m# \033[0m Explains None'
             print '\033[1;31m################################### \033[0m'
             # Phrase
             # for i in range(0, len(self.content['web'])):
