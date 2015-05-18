@@ -4,7 +4,7 @@ dict
 linux命令行下翻译工具
 
 ---
-#### 安装
+#### Install
 
 ```
 wget https://raw.githubusercontent.com/wufeifei/dict/master/dict.py
@@ -12,7 +12,7 @@ sudo mv ./dict.py /usr/bin/dict
 sudo chmod +x /usr/bin/dict
 ```
 
-#### 使用
+#### Usage
 
 ```
 $ dict test
