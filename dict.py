@@ -2,6 +2,7 @@
 
 import sys
 import json
+import urllib
 import urllib2
 
 
@@ -20,7 +21,7 @@ class Dict:
 
     def __init__(self, argv):
         if len(argv) == 1:
-            self.api = self.api + argv[0]
+            self.api = self.api + urllib.quote(argv[0])
             self.translate()
         else:
             print 'ERROR'
@@ -34,15 +35,30 @@ class Dict:
         code = self.content['errorCode']
         if code == 0:  # Success
             try:
-                u = self.content['basic']['us-phonetic']
+                u = self.content['basic']['us-phonetic'] # English
                 e = self.content['basic']['uk-phonetic']
-                explains = self.content['basic']['explains']
             except KeyError:
+                try:
+                    c = self.content['basic']['phonetic'] # Chinese
+                except KeyError:
+                    c = 'None'
                 u = 'None'
                 e = 'None'
+
+            try:
+                explains = self.content['basic']['explains']
+            except KeyError:
                 explains = 'None'
+
             print '\033[1;31m################################### \033[0m'
-            print '\033[1;31m# \033[0m', self.content['query'], self.content['translation'][0], '(U:', u, 'E:', e, ')'
+            print '\033[1;31m# \033[0m', self.content['query'], self.content['translation'][0],
+            if u != 'None':
+                print '(U:', u, 'E:', e, ')'
+            elif c != 'None':
+                print '(Pinyin:', c, ')'
+            else:
+                print
+
             if explains != 'None':
                 for i in range(0, len(explains)):
                     print '\033[1;31m# \033[0m', explains[i]
