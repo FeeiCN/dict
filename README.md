@@ -1,8 +1,8 @@
 ## dict
-[![PyPI](https://img.shields.io/pypi/status/Django.svg)]()
-[![Wercker](https://img.shields.io/wercker/ci/wercker/docs.svg)]()
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-[![PyPI](https://img.shields.io/pypi/pyversions/Django.svg)]()
+[![PyPI](https://img.shields.io/pypi/status/Django.svg)](https://github.com/wufeifei/dict)
+[![Wercker](https://img.shields.io/wercker/ci/wercker/docs.svg)](https://github.com/wufeifei/dict)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/wufeifei/dict)
+[![PyPI](https://img.shields.io/pypi/pyversions/Django.svg)](https://github.com/wufeifei/dict)
 
 linux命令行下翻译工具
 
