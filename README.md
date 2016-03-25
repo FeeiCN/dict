@@ -1,18 +1,17 @@
-dict
-====
-
+## dict
 linux命令行下翻译工具
 
----
-#### Install
+## Install
 
 ```
 wget https://raw.githubusercontent.com/wufeifei/dict/master/dict.py
-sudo mv ./dict.py /usr/bin/dict
-sudo chmod +x /usr/bin/dict
+sudo mv ./dict.py /usr/local/bin/dict
+sudo chmod +x /usr/local/bin/dict
 ```
 
-#### Usage
+## Usage
+
+English To Chinese
 
 ```
 $ dict test
@@ -22,5 +21,15 @@ $ dict test
 #  vt. 试验；测试
 #  vi. 试验；测试
 #  n. (Test)人名；(英)特斯特
+###################################
+```
+
+Chinese To English
+```
+$ dict 测试
+###################################
+#  测试 test (Pinyin: cè shì )
+#  [试验] test
+#  measurement
 ###################################
 ```
