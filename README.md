@@ -1,4 +1,9 @@
 ## dict
+[![PyPI](https://img.shields.io/pypi/status/Django.svg)]()
+[![Wercker](https://img.shields.io/wercker/ci/wercker/docs.svg)]()
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![PyPI](https://img.shields.io/pypi/pyversions/Django.svg)]()
+
 linux命令行下翻译工具
 
 ## Install
