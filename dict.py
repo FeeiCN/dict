@@ -4,6 +4,7 @@ import sys
 import json
 import urllib
 import urllib2
+import re
 
 
 """
@@ -20,8 +21,11 @@ class Dict:
     content = None
 
     def __init__(self, argv):
-        if len(argv) == 1:
-            self.api = self.api + urllib.quote(argv[0])
+        message = ''
+        if len(argv) > 0:
+            for s in argv:
+                message = message + s + ' '
+            self.api = self.api + urllib.quote(message)
             self.translate()
         else:
             print 'ERROR'
@@ -50,6 +54,11 @@ class Dict:
             except KeyError:
                 explains = 'None'
 
+            try:
+                phrase = self.content['web']
+            except KeyError:
+                phrase = 'None'
+
             print '\033[1;31m################################### \033[0m'
             print '\033[1;31m# \033[0m', self.content['query'], self.content['translation'][0],
             if u != 'None':
@@ -59,11 +68,27 @@ class Dict:
             else:
                 print
 
+            print '\033[1;31m# \033[0m'
+
             if explains != 'None':
                 for i in range(0, len(explains)):
                     print '\033[1;31m# \033[0m', explains[i]
             else:
                 print '\033[1;31m# \033[0m Explains None'
+
+            print '\033[1;31m# \033[0m'
+
+            if phrase != 'None':
+                for p in phrase:
+                    print '\033[1;31m# \033[0m', p['key'], ': ', p['value'][0]
+                    if len(p['value']) > 0:
+                        if re.match('[ \u4e00 -\u9fa5]+',p['key']) == None:
+                            blank = len(p['key'].encode('gbk'))
+                        else:
+                            blank = len(p['key'])
+                        for i in p['value'][1:]:
+                            print '\033[1;31m# \033[0m', ' '*(blank + 3), i
+
             print '\033[1;31m################################### \033[0m'
             # Phrase
             # for i in range(0, len(self.content['web'])):
