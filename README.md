@@ -3,7 +3,7 @@
 
 ## 安装(Install)
 
-```
+```bash
 wget https://raw.githubusercontent.com/wufeifei/dict/master/dict.py
 sudo mv ./dict.py /usr/local/bin/dict
 sudo chmod +x /usr/local/bin/dict
@@ -13,7 +13,7 @@ sudo chmod +x /usr/local/bin/dict
 
 #### 英译中(English To Chinese)
 
-```
+```bash
 $ dict test
 ###################################
 #  test 测试 (U: tɛst E: test )
@@ -24,7 +24,7 @@ $ dict test
 ###################################
 ```
 
-```
+```bash
 $ dict I love you
 ################################### 
 #  I love you 我爱你
@@ -44,7 +44,7 @@ $ dict I love you
 ```
 
 #### 中译英(Chinese To English)
-```
+```bash
 $ dict 测试
 ###################################
 #  测试 test (Pinyin: cè shì )
