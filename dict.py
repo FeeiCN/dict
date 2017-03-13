@@ -1,17 +1,31 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    dict
+    ~~~~
+
+    Chinese/English Translation
+
+    :date:      09/12/2013
+    :author:    Feei <feei@feei.cn>
+    :homepage:  https://github.com/wufeifei/dict
+    :license:   MIT, see LICENSE for more details.
+    :copyright: Copyright (c) 2017 Feei. All rights reserved
+"""
 
 import sys
 import json
-import urllib
-import urllib2
 import re
 
-
-"""
-dict - Chinese/English Translation
-@author Feei(wufeifei@wufeifei.com)
-@date   2013.12.09
-"""
+try:
+    # For Python 3.0 and later
+    from urllib.request import urlopen
+    from urllib.parse import quote
+except ImportError:
+    # Fall back to Python 2's urllib2
+    from urllib2 import urlopen
+    from urllib import quote
 
 
 class Dict:
@@ -25,25 +39,26 @@ class Dict:
         if len(argv) > 0:
             for s in argv:
                 message = message + s + ' '
-            self.api = self.api + urllib.quote(message)
+            self.api = self.api + quote(message)
             self.translate()
         else:
-            print 'ERROR'
+            print('ERROR')
 
     def translate(self):
-        content = urllib2.urlopen(self.api).read()
+        content = urlopen(self.api).read()
         self.content = json.loads(content)
         self.parse()
 
     def parse(self):
         code = self.content['errorCode']
         if code == 0:  # Success
+            c = None
             try:
-                u = self.content['basic']['us-phonetic'] # English
+                u = self.content['basic']['us-phonetic']  # English
                 e = self.content['basic']['uk-phonetic']
             except KeyError:
                 try:
-                    c = self.content['basic']['phonetic'] # Chinese
+                    c = self.content['basic']['phonetic']  # Chinese
                 except KeyError:
                     c = 'None'
                 u = 'None'
@@ -59,52 +74,53 @@ class Dict:
             except KeyError:
                 phrase = 'None'
 
-            print '\033[1;31m################################### \033[0m'
-            print '\033[1;31m# \033[0m', self.content['query'], self.content['translation'][0],
+            print(u'\033[1;31m################################### \033[0m')
+            print(u'\033[1;31m# \033[0m {0} {1}'.format(self.content['query'], self.content['translation'][0]))
             if u != 'None':
-                print '(U:', u, 'E:', e, ')'
+                print(u'\033[1;31m# \033[0m (U: {0} E: {1})'.format(u, e))
             elif c != 'None':
-                print '(Pinyin:', c, ')'
+                print(u'\033[1;31m# \033[0m (Pinyin: {0})'.format(c))
             else:
-                print
+                print('\033[1;31m# \033[0m')
 
-            print '\033[1;31m# \033[0m'
+            print(u'\033[1;31m# \033[0m')
 
             if explains != 'None':
                 for i in range(0, len(explains)):
-                    print '\033[1;31m# \033[0m', explains[i]
+                    print(u'\033[1;31m# \033[0m {0}'.format(explains[i]))
             else:
-                print '\033[1;31m# \033[0m Explains None'
+                print(u'\033[1;31m# \033[0m Explains None')
 
-            print '\033[1;31m# \033[0m'
+            print(u'\033[1;31m# \033[0m')
 
             if phrase != 'None':
                 for p in phrase:
-                    print '\033[1;31m# \033[0m', p['key'], ': ', p['value'][0]
+                    print(u'\033[1;31m# \033[0m {0} : {1}'.format(p['key'], p['value'][0]))
                     if len(p['value']) > 0:
-                        if re.match('[ \u4e00 -\u9fa5]+',p['key']) == None:
+                        if re.match('[ \u4e00 -\u9fa5]+', p['key']) == None:
                             blank = len(p['key'].encode('gbk'))
                         else:
                             blank = len(p['key'])
                         for i in p['value'][1:]:
-                            print '\033[1;31m# \033[0m', ' '*(blank + 3), i
+                            print(u'\033[1;31m# \033[0m {0} {1}'.format(' ' * (blank + 3), i))
 
-            print '\033[1;31m################################### \033[0m'
+            print(u'\033[1;31m################################### \033[0m')
             # Phrase
             # for i in range(0, len(self.content['web'])):
             #     print self.content['web'][i]['key'], ':'
             #     for j in range(0, len(self.content['web'][i]['value'])):
             #         print self.content['web'][i]['value'][j]
         elif code == 20:  # Text to long
-            print 'WORD TO LONG'
+            print(u'WORD TO LONG')
         elif code == 30:  # Trans error
-            print 'TRANSLATE ERROR'
+            print(u'TRANSLATE ERROR')
         elif code == 40:  # Don't support this language
-            print 'CAN\'T SUPPORT THIS LANGUAGE'
+            print(u'CAN\'T SUPPORT THIS LANGUAGE')
         elif code == 50:  # Key failed
-            print 'KEY FAILED'
+            print(u'KEY FAILED')
         elif code == 60:  # Don't have this word
-            print 'DO\'T HAVE THIS WORD'
+            print(u'DO\'T HAVE THIS WORD')
+
 
 if __name__ == '__main__':
     Dict(sys.argv[1:])
