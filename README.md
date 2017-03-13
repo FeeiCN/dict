@@ -1,7 +1,7 @@
 ## dict
-> Linux命令行下翻译工具
+> Linux命令行下中英文互译翻译工具
 
-## Install
+## 安装(Install)
 
 ```
 wget https://raw.githubusercontent.com/wufeifei/dict/master/dict.py
@@ -9,9 +9,9 @@ sudo mv ./dict.py /usr/local/bin/dict
 sudo chmod +x /usr/local/bin/dict
 ```
 
-## Usage
+## 用法(Usage)
 
-#### English To Chinese
+#### 英译中(English To Chinese)
 
 ```
 $ dict test
@@ -43,7 +43,7 @@ $ dict I love you
 ################################### 
 ```
 
-#### Chinese To English
+#### 中译英(Chinese To English)
 ```
 $ dict 测试
 ###################################
