@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# encoding: utf-8
 
 """
     dict
@@ -31,7 +31,8 @@ except ImportError:
 class Dict:
     key = '716426270'
     keyFrom = 'wufeifei'
-    api = 'http://fanyi.youdao.com/openapi.do?keyfrom=wufeifei&key=716426270&type=data&doctype=json&version=1.1&q='
+    api = 'http://fanyi.youdao.com/openapi.do'\
+        '?keyfrom=wufeifei&key=716426270&type=data&doctype=json&version=1.1&q='
     content = None
 
     def __init__(self, argv):
@@ -46,7 +47,7 @@ class Dict:
 
     def translate(self):
         content = urlopen(self.api).read()
-        self.content = json.loads(content)
+        self.content = json.loads(content.decode('utf8'))
         self.parse()
 
     def parse(self):
@@ -75,7 +76,8 @@ class Dict:
                 phrase = 'None'
 
             print(u'\033[1;31m################################### \033[0m')
-            print(u'\033[1;31m# \033[0m {0} {1}'.format(self.content['query'], self.content['translation'][0]))
+            print(u'\033[1;31m# \033[0m {0} {1}'.format(
+                  self.content['query'], self.content['translation'][0]))
             if u != 'None':
                 print(u'\033[1;31m# \033[0m (U: {0} E: {1})'.format(u, e))
             elif c != 'None':
@@ -95,14 +97,16 @@ class Dict:
 
             if phrase != 'None':
                 for p in phrase:
-                    print(u'\033[1;31m# \033[0m {0} : {1}'.format(p['key'], p['value'][0]))
+                    print(u'\033[1;31m# \033[0m {0} : {1}'.format(
+                          p['key'], p['value'][0]))
                     if len(p['value']) > 0:
-                        if re.match('[ \u4e00 -\u9fa5]+', p['key']) == None:
+                        if re.match('[ \u4e00 -\u9fa5]+', p['key']) is None:
                             blank = len(p['key'].encode('gbk'))
                         else:
                             blank = len(p['key'])
                         for i in p['value'][1:]:
-                            print(u'\033[1;31m# \033[0m {0} {1}'.format(' ' * (blank + 3), i))
+                            print(u'\033[1;31m# \033[0m {0} {1}'.format(
+                                  ' ' * (blank + 3), i))
 
             print(u'\033[1;31m################################### \033[0m')
             # Phrase
