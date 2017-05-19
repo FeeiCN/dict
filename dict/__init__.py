@@ -18,6 +18,15 @@ import sys
 import json
 import re
 
+__name__ = 'dict-cli'
+__version__ = '1.3.4'
+__description__ = u'命令行下中英文翻译工具（Chinese and English translation tools in the command line）'
+__keywords__ = 'Translation English2Chinese Chinese2English Command-line'
+__author__ = 'Feei'
+__contact__ = 'feei@feei.cn'
+__url__ = 'https://github.com/wufeifei/dict'
+__license__ = 'MIT'
+
 try:
     # For Python 3.0 and later
     from urllib.request import urlopen
@@ -45,9 +54,12 @@ class Dict:
             print('ERROR')
 
     def translate(self):
-        content = urlopen(self.api).read()
-        self.content = json.loads(content)
-        self.parse()
+        try:
+            content = urlopen(self.api).read()
+            self.content = json.loads(content)
+            self.parse()
+        except Exception as e:
+            print('ERROR: Network or remote service error!')
 
     def parse(self):
         code = self.content['errorCode']
@@ -122,5 +134,5 @@ class Dict:
             print(u'DO\'T HAVE THIS WORD')
 
 
-if __name__ == '__main__':
+def main():
     Dict(sys.argv[1:])
