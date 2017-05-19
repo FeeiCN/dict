@@ -52,7 +52,7 @@ class Dict:
             self.api = self.api + quote(message)
             self.translate()
         else:
-            print('ERROR')
+            print('Usage: dict test')
 
     def translate(self):
         try:
