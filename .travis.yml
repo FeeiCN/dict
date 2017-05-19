@@ -9,5 +9,4 @@ python:
   - "3.6"
   - "3.7"
   - "nightly"
-install: pip install pytest
 script: pytest
