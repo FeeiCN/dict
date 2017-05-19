@@ -12,28 +12,29 @@
     :license:   MIT, see LICENSE for more details.
     :copyright: Copyright (c) 2017 Feei. All rights reserved
 """
+from __future__ import unicode_literals
 from dict import Dict
 
 
 def test_e2c_words(capfd):
     Dict(['Test'])
     out, err = capfd.readouterr()
-    assert u'测试' in out
+    assert '测试' in out
 
 
 def test_e2c_sentences(capfd):
     Dict(['I', 'Love', 'You'])
     out, err = capfd.readouterr()
-    assert u'我爱你' in out
+    assert '我爱你' in out
 
 
 def test_c2e_words(capfd):
-    Dict(['测试'])
+    Dict(['测试'.encode('utf-8')])
     out, err = capfd.readouterr()
-    assert u'Test' in out
+    assert 'Test' in out
 
 
 def test_c2e_sentences(capfd):
-    Dict(['我爱你'])
+    Dict(['我爱你'.encode('utf-8')])
     out, err = capfd.readouterr()
-    assert u'I love you' in out
+    assert 'I love you' in out
