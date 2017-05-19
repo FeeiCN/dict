@@ -9,7 +9,5 @@ python:
   - "3.6"
   - "3.7"
   - "nightly"
-install:
-  - travis_retry pip install -U tox
 script:
-  - tox
+  - py.test

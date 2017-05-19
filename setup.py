@@ -21,9 +21,9 @@ import setuptools.command.test
 
 def long_description():
     try:
-        return codecs.open('README.md', 'r', 'utf-8').read()
+        return codecs.open('README.rst', 'r', 'utf-8').read()
     except IOError:
-        return 'Long description error: Missing README.md file'
+        return 'Long description error: Missing README.rst file'
 
 
 setuptools.setup(
