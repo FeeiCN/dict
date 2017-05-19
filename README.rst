@@ -1,7 +1,7 @@
 dict
 ====
 
-|status| |build| |coverage| |github-release| |pypi-release| |pyversion| |license| |star|
+|status| |build| |coverage| |pypi-release| |github-release| |pyversion| |license|
 
 .. |status| image:: https://img.shields.io/pypi/status/dict-cli.svg
     :alt: Status
@@ -15,13 +15,13 @@ dict
     :alt: Code Test Coverage
     :target: https://coveralls.io/github/wufeifei/dict
 
-.. |github-release| image:: https://img.shields.io/github/release/wufeifei/dict.svg
-    :alt: GitHub Release
-    :target: https://github.com/wufeifei/dict/releases
-
 .. |pypi-release| image:: https://img.shields.io/pypi/v/dict-cli.svg
     :alt: PyPI Release
     :target: https://pypi.python.org/pypi/dict-cli
+
+.. |github-release| image:: https://img.shields.io/github/release/wufeifei/dict.svg
+    :alt: GitHub Release
+    :target: https://github.com/wufeifei/dict/releases
 
 .. |pyversion| image:: https://img.shields.io/pypi/pyversions/dict-cli.svg
     :alt: PYVersion
@@ -30,10 +30,6 @@ dict
 .. |license| image:: https://img.shields.io/github/license/wufeifei/dict.svg
     :alt: License
     :target: https://github.com/wufeifei/dict/blob/master/LICENSE
-
-.. |star| image:: https://img.shields.io/github/stars/wufeifei/dict.svg?style=social&label=Star
-    :alt: Star
-    :target: https://github.com/wufeifei/dict/stargazers
 
 
 命令行下中英文翻译工具（Chinese and English translation tools in the command line）
