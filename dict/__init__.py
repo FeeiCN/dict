@@ -61,6 +61,7 @@ class Dict:
             self.parse()
         except Exception as e:
             print('ERROR: Network or remote service error!')
+            print(e)
 
     def parse(self):
         code = self.content['errorCode']
