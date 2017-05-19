@@ -57,7 +57,7 @@ class Dict:
     def translate(self):
         try:
             content = urlopen(self.api).read()
-            self.content = json.loads(content)
+            self.content = json.loads(content.decode('utf-8'))
             self.parse()
         except Exception as e:
             print('ERROR: Network or remote service error!')
