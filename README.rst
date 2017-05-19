@@ -1,7 +1,7 @@
 dict
 ====
 
-|status| |build| |converage| |github-release| |pypi-release| |pyversion| |license| |star|
+|status| |build| |coverage| |github-release| |pypi-release| |pyversion| |license| |star|
 
 .. |status| image:: https://img.shields.io/pypi/status/dict-cli.svg
     :alt: Status
@@ -11,8 +11,8 @@ dict
     :alt: Build Status
     :target: https://pypi.python.org/pypi/dict-cli
 
-.. |converage| image:: https://img.shields.io/coveralls/wufeifei/dict.svg
-    :alt: Code Test Converage
+.. |coverage| image:: https://img.shields.io/coveralls/wufeifei/dict.svg
+    :alt: Code Test Coverage
     :target: https://coveralls.io/github/wufeifei/dict
 
 .. |github-release| image:: https://img.shields.io/github/release/wufeifei/dict.svg

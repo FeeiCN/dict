@@ -12,6 +12,6 @@ install:
   - pip install coveralls
 script:
   - py.test
-  - coverage run --source=dict setup.py test
+  - coverage run --source=dict -m pytest
 after_success:
   - coveralls
