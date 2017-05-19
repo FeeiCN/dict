@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 
 """
     dict
@@ -49,7 +49,7 @@ class Dict:
         if len(argv) > 0:
             for s in argv:
                 message = message + s + ' '
-            self.api = self.api + quote(message)
+            self.api = self.api + quote(message.encode('utf-8'))
             self.translate()
         else:
             print('Usage: dict test')

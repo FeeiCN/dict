@@ -29,12 +29,12 @@ def test_e2c_sentences(capfd):
 
 
 def test_c2e_words(capfd):
-    Dict(['测试'.encode('utf-8')])
+    Dict(['测试'])
     out, err = capfd.readouterr()
     assert 'Test' in out
 
 
 def test_c2e_sentences(capfd):
-    Dict(['我爱你'.encode('utf-8')])
+    Dict(['我爱你'])
     out, err = capfd.readouterr()
     assert 'I love you' in out
