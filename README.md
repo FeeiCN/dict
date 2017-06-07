@@ -10,7 +10,7 @@
 
 命令行下中英文翻译工具（Chinese and English translation tools in the command line）
 
-[![asciicast](http://asciinema.org/a/123670.png)](http://asciinema.org/a/123670)
+[![asciicast](http://asciinema.org/a/123670.png?v=2)](http://asciinema.org/a/123670)
 
 
 ## 安装(Install)
