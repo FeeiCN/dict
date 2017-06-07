@@ -65,7 +65,7 @@ $ dict I love you
 
 #### 中译英(Chinese To English)
 
-```
+```bash
 $ dict 测试
 ###################################
 #  测试 test
