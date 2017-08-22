@@ -1,6 +1,6 @@
 # dict
 
-> 由于内置的有道翻译的Key因为调用量过滤频繁导致被封了，正在和他们沟通。
+> 由于内置的有道翻译的Key因为调用量过滤频繁导致被封了，正在沟通协调解决中。
 
 [![status](https://img.shields.io/pypi/status/dict-cli.svg)](https://pypi.python.org/pypi/dict-cli)
 [![Build](https://img.shields.io/travis/wufeifei/dict.svg)](https://pypi.python.org/pypi/dict-cli)
