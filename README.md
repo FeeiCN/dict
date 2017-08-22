@@ -10,7 +10,7 @@
 [![Python-Versions](https://img.shields.io/pypi/pyversions/dict-cli.svg)](https://pypi.python.org/pypi/dict-cli)
 [![License](https://img.shields.io/github/license/wufeifei/dict.svg)](https://github.com/wufeifei/dict/blob/master/LICENSE)
 
-命令行下中英文翻译工具（Chinese and English translation tools in the command line）
+命令行下中英文翻译工具（Chinese and English translation tools in the command line），翻译服务基于有道翻译。
 
 [![asciicast](http://asciinema.org/a/123670.png?v=2)](http://asciinema.org/a/123670)
 
