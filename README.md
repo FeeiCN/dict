@@ -1,7 +1,5 @@
 # dict
 
-> 由于内置的有道翻译的Key因为调用量过滤频繁导致被封了，且有道翻译现已没有免费Key，暂时停滞。
-
 [![status](https://img.shields.io/pypi/status/dict-cli.svg)](https://pypi.python.org/pypi/dict-cli)
 [![Build](https://img.shields.io/travis/wufeifei/dict.svg)](https://pypi.python.org/pypi/dict-cli)
 [![Coverage](https://img.shields.io/coveralls/wufeifei/dict.svg)](https://coveralls.io/github/wufeifei/dict)
