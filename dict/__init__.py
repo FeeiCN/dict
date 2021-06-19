@@ -40,7 +40,7 @@ except ImportError:
 class Dict:
     key = '716426270'
     keyFrom = 'wufeifei'
-    api = 'http://fanyi.youdao.com/openapi.do' \
+    api = 'https://fanyi.youdao.com/openapi.do' \
           '?keyfrom=wufeifei&key=716426270&type=data&doctype=json&version=1.1&q='
     content = None
 
